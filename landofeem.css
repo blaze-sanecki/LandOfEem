@@ -5,32 +5,32 @@
 /* Default Font */
 @font-face {
     font-family: 'New Atten';
-    src: url('fonts/NewAttenRegular.woff2') format('woff2'),
-        url('fonts/NewAttenRegular.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenRegular.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenRegular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'New Atten';
-    src: url('fonts/NewAttenBold.woff2') format('woff2'),
-        url('fonts/NewAttenBold.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenBold.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenBold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'New Atten';
-    src: url('fonts/NewAttenExtraBold.woff2') format('woff2'),
-        url('fonts/NewAttenExtraBold.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenExtraBold.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'New Atten';
-    src: url('fonts/NewAttenItalic.woff2') format('woff2'),
-        url('fonts/NewAttenItalic.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenItalic.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/NewAttenItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
@@ -38,8 +38,8 @@
 /* Header Font (all caps)*/
 @font-face {
     font-family: 'Buena Park JF';
-    src: url('fonts/BuenaParkJF.woff2') format('woff2'),
-        url('fonts/BuenaParkJF.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/BuenaParkJF.woff2') format('woff2'),
+        url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/fonts/BuenaParkJF.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -54,10 +54,10 @@
 /*================*/
 /* Corner Box */
 /*================*/
-body {
-    --radiusouter: 0.5em;
-    --radius: 0.45em;
-    --thickness: 0.1em;
+.container {
+    --radiusouter: 8px;
+    --radius: 7px;
+    --thickness: 1.5px;
 }
 
 .corner-box-wrapper {
@@ -72,7 +72,6 @@ body {
     padding: var(--radiusouter);
     clip-path: shape(from 0 var(--radiusouter), line to var(--radiusouter) 0, line to calc(100% - var(--radiusouter)) 0, line to 100% var(--radiusouter), line to 100% calc(100% - var(--radiusouter)), line to calc(100% - var(--radiusouter)) 100%, line to var(--radiusouter) 100%, line to 0 calc(100% - var(--radiusouter)), close);
     background-color: #cc9133;
-    color: #cc9133;
     position: relative;
 }
 
@@ -100,7 +99,6 @@ body {
     height: 16px;
     width: fit-content;
     padding: 4px;
-    color: #cc9133;
 }
 
 .corner-box .content {
@@ -116,44 +114,76 @@ body {
     margin-top: -4px;
 }
 
-.corner-box input {
-    border: none;
-    background-color: #eee;
-    font-family: 'New Atten', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 2px 4px;
-    width: 100%;
+.corner-box label {
+    font: 13px 'New Atten', sans-serif;
+    font-weight: 800;
+    color: #cc9133;
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    height: 100%;
+    margin-bottom:0;
 }
 
-.content.two-columns {
-    grid-template-columns: 33% 67%;
+.corner-box input {
+    border: none;
+    background-color: #fff;
+    font-family: 'New Atten', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2px 4px;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    color: black;
+    margin:0;
+    margin-top:0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.corner-box .content.two-columns {
+    grid-template-columns: fit-content(50%) auto;
     display: grid;
+}
+
+.xp-rows {
+    grid-template-rows: 0% 50% 50%;
+    grid-template-columns: 78px;
+    display: grid;
+    vertical-align: middle;
+    height: 64px;
+    margin: 8px;
+    margin-top: 18px;
+}
+
+.xp-rows .corner-box-wrapper {
+    height: 18px;
+    margin: 0;
+}
+
+.xp-rows .corner-box input {
+    font-size: 16px;
+    padding: 0 4px;
 }
 
 /*================*/
 /* Sheet Styles */
 /*================*/
-.container,
-body {
-    font: 14px 'New Atten', sans-serif;
+
+.container {
     background-color: #fff;
     margin: 0;
     padding: 0;
 }
 
-.pc {
-    font-family: 'Minion Pro';
-}
-
 .pc .header {
-    font: 13px 'New Atten', sans-serif;
-    font-weight: 800;
     background-color: #faf4eb;
     color: #cc9133;
     display: grid;
     height: 100px;
-    grid-template-columns: auto auto auto 100px 220px;
+    grid-template-columns: auto auto 100px 220px;
     border-bottom: 7px solid #cc9133;
 }
 
@@ -170,4 +200,12 @@ body {
 .pc .header .logo {
     height: 62px;
     margin: 20px;
+    margin-left: 12px;
+}
+
+.xp-background{
+    position:relative;
+    top: -17px;
+    left: -11px;
+    height: 100px;
 }
