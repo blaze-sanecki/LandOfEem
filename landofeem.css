@@ -1,0 +1,173 @@
+/*================*/
+/* Font Faces */
+/*================*/
+
+/* Default Font */
+@font-face {
+    font-family: 'New Atten';
+    src: url('fonts/NewAttenRegular.woff2') format('woff2'),
+        url('fonts/NewAttenRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'New Atten';
+    src: url('fonts/NewAttenBold.woff2') format('woff2'),
+        url('fonts/NewAttenBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'New Atten';
+    src: url('fonts/NewAttenExtraBold.woff2') format('woff2'),
+        url('fonts/NewAttenExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'New Atten';
+    src: url('fonts/NewAttenItalic.woff2') format('woff2'),
+        url('fonts/NewAttenItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Header Font (all caps)*/
+@font-face {
+    font-family: 'Buena Park JF';
+    src: url('fonts/BuenaParkJF.woff2') format('woff2'),
+        url('fonts/BuenaParkJF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*================*/
+/* Roll20 Styles */
+/*================*/
+.ui-dialog .charsheet {
+    padding: 0;
+}
+
+/*================*/
+/* Corner Box */
+/*================*/
+body {
+    --radiusouter: 0.5em;
+    --radius: 0.45em;
+    --thickness: 0.1em;
+}
+
+.corner-box-wrapper {
+    display: block;
+    height: 50px;
+    margin: 8px;
+    margin-top: 18px;
+}
+
+.corner-box {
+    height: 100%;
+    padding: var(--radiusouter);
+    clip-path: shape(from 0 var(--radiusouter), line to var(--radiusouter) 0, line to calc(100% - var(--radiusouter)) 0, line to 100% var(--radiusouter), line to 100% calc(100% - var(--radiusouter)), line to calc(100% - var(--radiusouter)) 100%, line to var(--radiusouter) 100%, line to 0 calc(100% - var(--radiusouter)), close);
+    background-color: #cc9133;
+    color: #cc9133;
+    position: relative;
+}
+
+.corner-box.with-header {
+    z-index: -1;
+}
+
+.corner-box::before {
+    display: block;
+    content: '';
+    position: relative;
+    left: calc(var(--thickness)*1 - var(--radiusouter));
+    top: calc(var(--thickness)*1 - var(--radiusouter));
+    width: calc(100% - var(--thickness)*2 + var(--radiusouter)*2);
+    height: calc(100% - var(--thickness)*2 + var(--radiusouter)*2);
+    clip-path: shape(from 0 var(--radius), line to var(--radius) 0, line to calc(100% - var(--radius)) 0, line to 100% var(--radius), line to 100% calc(100% - var(--radius)), line to calc(100% - var(--radius)) 100%, line to var(--radius) 100%, line to 0 calc(100% - var(--radius)), close);
+    background-color: #fff;
+    z-index: -1;
+}
+
+.corner-box-wrapper .header {
+    margin-bottom: -12px;
+    margin-left: 16px;
+    background-color: white;
+    height: 16px;
+    width: fit-content;
+    padding: 4px;
+    color: #cc9133;
+}
+
+.corner-box .content {
+    width: calc(100% - var(--radiusouter)*2);
+    display: block;
+    position: absolute;
+    top: calc(var(--radiusouter) - var(--thickness));
+    left: calc(var(--thickness) + var(--radiusouter));
+}
+
+.corner-box .inner-header {
+    margin-left: -4px;
+    margin-top: -4px;
+}
+
+.corner-box input {
+    border: none;
+    background-color: #eee;
+    font-family: 'New Atten', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 2px 4px;
+    width: 100%;
+}
+
+.content.two-columns {
+    grid-template-columns: 33% 67%;
+    display: grid;
+}
+
+/*================*/
+/* Sheet Styles */
+/*================*/
+.container,
+body {
+    font: 14px 'New Atten', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.pc {
+    font-family: 'Minion Pro';
+}
+
+.pc .header {
+    font: 13px 'New Atten', sans-serif;
+    font-weight: 800;
+    background-color: #faf4eb;
+    color: #cc9133;
+    display: grid;
+    height: 100px;
+    grid-template-columns: auto auto auto 100px 220px;
+    border-bottom: 7px solid #cc9133;
+}
+
+.pc .header .frame {
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid #cc9133;
+    background-color: #fff;
+    display: block;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.pc .header .logo {
+    height: 62px;
+    margin: 20px;
+}

@@ -1,0 +1,56 @@
+<link rel="stylesheet" type="text/css" href="landofeem.css">
+<!--********* PC SHEET **********-->
+<div class="container">
+    <div class="pc">
+        <div class="header">
+            <div class="corner-box-wrapper"><div class="corner-box"><div class="content two-columns"><label>Name & Pronouns</label><input value="Kiri Candleheart"/><label>Class</label><input value="Bard"/></div></div></div>
+            <div class="corner-box-wrapper"><div class="corner-box"><div class="content two-columns"><label>Folk</label><input value="Boggart"><label>Homeland</label><input value="Fleabag County"/></div></div></div>
+            <div class="corner-box-wrapper"><div class="corner-box"><div class="content">Heroic Titles</div></div></div>
+            <div class="corner-box-wrapper"><div class="corner-box"><div class="content">LV; XP</div></div></div>
+            <img src="images/logo-flat.png" alt="Land of Eem Logo" class="logo"/>
+    </div>
+</div>
+
+<!--********* FOOTER **********-->
+<div class="footer">
+    <span>Character Sheet by </span><a href="https://roll20.net/">Blaze Sanecki</a><span>, Land of Eem by </span><a href="https://landofeem.com/">Ben Costa & James Parks</a>
+    <span>Version </span><span name="attr_version"></span>
+</div>
+
+<!--********* HIDDEN ATTRIBUTES **********-->
+<input type="hidden" name="attr_version" value="1.201" />
+
+<!--********* ROLL TEMPLATE **********-->
+<div class="rolltemplates">
+    <rolltemplate class="sheet-rolltemplate-rolls">
+        <!--- Display a header on the template --->
+        <div class="sheet-template-header">
+            {{#header}}{{header}}{{/header}}
+        </div>
+        <!--- Display the dice roll in the template --->
+        <div class="sheet-template-body">
+            {{#dice}}
+            <div class="sheet-template-row">{{dice}}</div>
+            {{/dice}}
+            <!--- Display a description. This is great for text included with a roll --->
+            {{#desc}}
+            <div class="sheet-template-row">
+                <span class="sheet-template-desc">
+                </span>
+            </div>
+            {{/desc}}
+        </div>
+    </rolltemplate>
+</div>
+<!--********* SCRIPTS **********-->
+<script type="text/worker">
+
+on("clicked:whisper", (eventinfo) => {
+	getAttrs(["gm_toggle"], (v) => {
+		setAttrs({
+			gm_toggle : (v.gm_toggle.includes("gm")) ?  " " : "/w gm"
+		}); 
+	});
+});
+
+</script>
