@@ -1,3 +1,22 @@
 {
-    
+    "vim": "Vim",
+    "vigor": "Vigor",
+    "knack": "Knack",
+    "knowhow": "Knowhow",
+    "charm": "Charm",
+    "inspire": "Inspire",
+    "mettle": "Mettle",
+    "perception": "Perception",
+    "athletics": "Athletics",
+    "intimidate": "Intimidate",
+    "might": "Might",
+    "vitality": "Vitality",
+    "nimbleness": "Nimbleness",
+    "search": "Search",
+    "sneak": "Sneak",
+    "trickery": "Trickery",
+    "lore": "Lore",
+    "realms": "Realms",
+    "tinker": "Tinker",
+    "wilderness": "Wilderness"
 }

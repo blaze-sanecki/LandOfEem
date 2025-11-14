@@ -1,3 +1,22 @@
 {
- "Test"  : "ThisIsTest"   
+    "vim": "Duch",
+    "vigor": "Wigor",
+    "knack": "Spryt",
+    "knowhow": "Obycie",
+    "charm": "Urok",
+    "inspire": "Przemowa",
+    "mettle": "Wola",
+    "perception": "Percepcja",
+    "athletics": "Atletyka",
+    "intimidate": "Zastraszanie",
+    "might": "Krzepa",
+    "vitality": "Witalność",
+    "nimbleness": "Zwinność",
+    "search": "Szukanie",
+    "sneak": "Skradanie",
+    "trickery": "Podstęp",
+    "lore": "Legendy",
+    "realms": "Krainy",
+    "tinker": "Majstrowanie",
+    "wilderness": "Dzicz"
 }

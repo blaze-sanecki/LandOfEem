@@ -68,6 +68,7 @@
 }
 
 .corner-box {
+    shape-rendering: geometricPrecision;
     height: 100%;
     padding: var(--radiusouter);
     clip-path: shape(from 0 var(--radiusouter), line to var(--radiusouter) 0, line to calc(100% - var(--radiusouter)) 0, line to 100% var(--radiusouter), line to 100% calc(100% - var(--radiusouter)), line to calc(100% - var(--radiusouter)) 100%, line to var(--radiusouter) 100%, line to 0 calc(100% - var(--radiusouter)), close);
@@ -80,6 +81,7 @@
 }
 
 .corner-box::before {
+    shape-rendering: geometricPrecision;
     display: block;
     content: '';
     position: relative;
@@ -210,22 +212,32 @@
 .attribute-box {
     font-family: 'New Atten', sans-serif;
     font-size: 16px;
-    grid-template-columns: auto 25px auto;
+    grid-template-columns: 90px 30px auto;
     display: grid;
     width: 200px;
     align-items: center;
 }
+
 .attribute-box ul {
     list-style: none;
+    margin: 0;
+    margin-top: 4px;
 }
+
 .attribute-box li {
-    height: 22px;
+    height: 20px;
+    color: #000;
 }
-.attribute-box h2{
+
+.attribute-box h2 {
     font-size: 16px;
-    color:#cc9133;
+    color: #cc9133;
     font-weight: 800;
     text-transform: uppercase;
+    line-height: 22px;
+    overflow: visible;
+    display: block;
+    width: 100px;
 }
 
 .ui-dialog .charsheet .attribute-box input {
@@ -234,17 +246,74 @@
     border-radius: 0;
     background-color: #fff;
     width: 22px;
-    font-size: 14px;
+    font-size: 16px;
     height: 16px;
     padding: 3px;
+    padding-left: 0;
+    color: #000;
+    text-align: right;
 }
 
 .sheet-attributes {
-    grid-template-columns: auto auto auto auto;
+    padding-top: 16px;
+    grid-template-columns: repeat(2, minmax(auto, 220px)) auto;
+}
+
+.separator {
+    border-bottom: 2px solid #cc9133;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    margin-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: unset;
+    }
+
+    .sheet-attributes {
+    }
+}
+
+@media (min-width: 880px) {
+    .container {
+        width: unset;
+    }
+
+    .sheet-attributes {
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: unset;
+    }
+
+    .sheet-attributes {
+        grid-template-columns: auto auto auto auto;
+    }
 }
 
 .dice-field {
-    background-image: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/dicefield.png');
+    background-image: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/dice.png');
+    width: 62px;
+    height: 71px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+}
+
+.ui-dialog .charsheet .dice-field input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
 }
 
 /*================*/
@@ -255,6 +324,7 @@
     background-color: #faf4eb;
     margin: 0;
     padding: 0;
+    /*min-width: 860px;*/
 }
 
 .pc .header {
@@ -302,7 +372,6 @@
     margin-top: 0;
     background-color: #fff;
     padding: 8px;
-    padding-top: 0;
 }
 
 /* style the active button */
