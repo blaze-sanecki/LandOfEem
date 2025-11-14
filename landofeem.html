@@ -16,7 +16,8 @@
                 </div>
             </div>
             <div class="xp-rows">
-                <img src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/xp.png" class="xp-background" />
+                <img src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/xp.png"
+                    class="xp-background" />
                 <div class="corner-box-wrapper">
                     <div class="corner-box">
                         <div class="content two-columns"><label>LV</label><input /></div>
@@ -31,49 +32,126 @@
             <img src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/logo-flat.png"
                 alt="Land of Eem Logo" class="logo" />
         </div>
+        <!--********* NAV BAR **********-->
+        <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="inventory" />
+        <div class="nav-bar">
+            <button type="action" name="act_attributes" class="sheet-button0">Attributes & Perks</button>
+            <button type="action" name="act_inventory" class="sheet-button1">Inventory & Crafting</button>
+            <button type="action" name="act_background" class="sheet-button2">Background & Notes</button>
+        </div>
+        <div class="sheet-attributes">
+            <div class="attribute-box">
+                <h2>Vim</h2>
+                <ul>
+                    <li><input value="+2" /></li>
+                    <li><input value="+2" /></li>
+                    <li><input value="+0" /></li>
+                    <li><input value="+2" /></li>
+                </ul>
+                <ul>
+                    <li>Charm</li>
+                    <li>Inspire</li>
+                    <li>Mettle</li>
+                    <li>Perception</li>
+                </ul>
+            </div>
+            <div class="attribute-box">
+                <h2>Vigor</h2>
+                <ul>
+                    <li><input value="-1" /></li>
+                    <li><input value="-1" /></li>
+                    <li><input value="-1" /></li>
+                    <li><input value="+0" /></li>
+                </ul>
+                <ul>
+                    <li>Athletics</li>
+                    <li>Intimidate</li>
+                    <li>Might</li>
+                    <li>Vitality</li>
+                </ul>
+            </div>
+            <div class="attribute-box">
+                <h2>Knack</h2>
+                <ul>
+                    <li><input value="+1" /></li>
+                    <li><input value="+0" /></li>
+                    <li><input value="+1" /></li>
+                    <li><input value="+1" /></li>
+                </ul>
+                <ul>
+                    <li>Nimbleness</li>
+                    <li>Search</li>
+                    <li>Sneak</li>
+                    <li>Trickery</li>
+                </ul>
+            </div>
+            <div class="attribute-box">
+                <h2>Knowhow</h2>
+                <div class="dice-field"><input value="+2" /></div>
+                <ul>
+                    <li><input value="+1" /></li>
+                    <li><input value="+1" /></li>
+                    <li><input value="+0" /></li>
+                    <li><input value="+0" /></li>
+                </ul>
+                <ul>
+                    <li>Lore</li>
+                    <li>Realms</li>
+                    <li>Tinker</li>
+                    <li>Wilderness</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sheet-inventory">
+            <h2>Journal/Notes</h2>
+            <span>Journal/Notes Stuff Goes here</span>
+        </div>
+        <div class="sheet-background">
+            <h2>Config/Settings</h2>
+            <span>Sheet Config/Settings goes here</span>
+        </div>
     </div>
-
     <!--********* FOOTER **********-->
     <div class="footer">
         <span>Character Sheet by </span><a href="https://roll20.net/">Blaze Sanecki</a><span>, Land of Eem by </span><a
             href="https://landofeem.com/">Ben Costa & James Parks</a>
         <span>Version </span><span name="attr_version"></span>
     </div>
+</div>
+<!--********* HIDDEN ATTRIBUTES **********-->
+<input type="hidden" name="attr_version" value="1.201" />
 
-    <!--********* HIDDEN ATTRIBUTES **********-->
-    <input type="hidden" name="attr_version" value="1.201" />
-
-    <!--********* ROLL TEMPLATE **********-->
-    <div class="rolltemplates">
-        <rolltemplate class="sheet-rolltemplate-rolls">
-            <!--- Display a header on the template --->
-            <div class="sheet-template-header">
-                {{#header}}{{header}}{{/header}}
+<!--********* ROLL TEMPLATE **********-->
+<div class="rolltemplates">
+    <rolltemplate class="sheet-rolltemplate-rolls">
+        <!--- Display a header on the template --->
+        <div class="sheet-template-header">
+            {{#header}}{{header}}{{/header}}
+        </div>
+        <!--- Display the dice roll in the template --->
+        <div class="sheet-template-body">
+            {{#dice}}
+            <div class="sheet-template-row">{{dice}}</div>
+            {{/dice}}
+            <!--- Display a description. This is great for text included with a roll --->
+            {{#desc}}
+            <div class="sheet-template-row">
+                <span class="sheet-template-desc">
+                </span>
             </div>
-            <!--- Display the dice roll in the template --->
-            <div class="sheet-template-body">
-                {{#dice}}
-                <div class="sheet-template-row">{{dice}}</div>
-                {{/dice}}
-                <!--- Display a description. This is great for text included with a roll --->
-                {{#desc}}
-                <div class="sheet-template-row">
-                    <span class="sheet-template-desc">
-                    </span>
-                </div>
-                {{/desc}}
-            </div>
-        </rolltemplate>
-    </div>
-    <!--********* SCRIPTS **********-->
-    <script type="text/worker">
+            {{/desc}}
+        </div>
+    </rolltemplate>
+</div>
 
-on("clicked:whisper", (eventinfo) => {
-	getAttrs(["gm_toggle"], (v) => {
-		setAttrs({
-			gm_toggle : (v.gm_toggle.includes("gm")) ?  " " : "/w gm"
-		}); 
-	});
+<!--********* SCRIPTS **********-->
+<script type="text/worker">
+const buttonlist = ["attributes", "inventory", "background"];
+buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+        setAttrs({
+            sheetTab: button
+        });
+    });
 });
-
 </script>

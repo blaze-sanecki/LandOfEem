@@ -122,7 +122,8 @@
     align-items: center;
     padding-right: 4px;
     height: 100%;
-    margin-bottom:0;
+    margin-bottom: 0;
+    max-height: 26px;
 }
 
 .corner-box input {
@@ -136,8 +137,8 @@
     height: auto;
     border-radius: 0;
     color: black;
-    margin:0;
-    margin-top:0;
+    margin: 0;
+    margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -169,11 +170,89 @@
 }
 
 /*================*/
+/* Nav Bar */
+/*================*/
+.nav-bar {
+    background-color: #cc9133;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.nav-bar button {
+    font-family: 'New Atten', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    display: inline-block;
+    padding: 5px;
+    padding-bottom: 7px;
+    border: 1.5px solid #cc9133;
+    border-bottom: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #cc9133;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-bar button:hover {
+    position: relative;
+    top: -7px;
+    padding-bottom: 14px;
+    margin-bottom: -7px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*================*/
+/* Attribute Box */
+/*================*/
+.attribute-box {
+    font-family: 'New Atten', sans-serif;
+    font-size: 16px;
+    grid-template-columns: auto 25px auto;
+    display: grid;
+    width: 200px;
+    align-items: center;
+}
+.attribute-box ul {
+    list-style: none;
+}
+.attribute-box li {
+    height: 22px;
+}
+.attribute-box h2{
+    font-size: 16px;
+    color:#cc9133;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.ui-dialog .charsheet .attribute-box input {
+    border: none;
+    border-bottom: 1.5px solid #cc9133;
+    border-radius: 0;
+    background-color: #fff;
+    width: 22px;
+    font-size: 14px;
+    height: 16px;
+    padding: 3px;
+}
+
+.sheet-attributes {
+    grid-template-columns: auto auto auto auto;
+}
+
+.dice-field {
+    background-image: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/dicefield.png');
+}
+
+/*================*/
 /* Sheet Styles */
 /*================*/
 
 .container {
-    background-color: #fff;
+    background-color: #faf4eb;
     margin: 0;
     padding: 0;
 }
@@ -184,7 +263,6 @@
     display: grid;
     height: 100px;
     grid-template-columns: auto auto 100px 220px;
-    border-bottom: 7px solid #cc9133;
 }
 
 .pc .header .frame {
@@ -201,11 +279,48 @@
     height: 62px;
     margin: 20px;
     margin-left: 12px;
+    max-width: none;
 }
 
-.xp-background{
-    position:relative;
+.xp-background {
+    position: relative;
     top: -17px;
     left: -11px;
     height: 100px;
+    width: 100px;
+    max-width: none;
+}
+
+/* configure the tab buttons */
+.pc .sheet-attributes,
+.pc .sheet-inventory,
+.pc .sheet-background {
+    display: none;
+    border: 1.5px solid #cc9133;
+    border-top: none;
+    margin: 8px;
+    margin-top: 0;
+    background-color: #fff;
+    padding: 8px;
+    padding-top: 0;
+}
+
+/* style the active button */
+.pc .sheet-tabstoggle[value="attributes"]~div.nav-bar .sheet-button0,
+.pc .sheet-tabstoggle[value="inventory"]~div.nav-bar .sheet-button1,
+.pc .sheet-tabstoggle[value="background"]~div.nav-bar .sheet-button2 {
+    background-color: #fff;
+    color: #cc9133;
+    position: relative;
+    top: -7px;
+    padding-bottom: 14px;
+    margin-bottom: -7px;
+    box-shadow: none !important;
+}
+
+/* show the selected tab */
+.pc .sheet-tabstoggle[value="attributes"]~div.sheet-attributes,
+.pc .sheet-tabstoggle[value="inventory"]~div.sheet-inventory,
+.pc .sheet-tabstoggle[value="background"]~div.sheet-background {
+    display: grid;
 }
