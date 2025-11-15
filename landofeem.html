@@ -5,14 +5,15 @@
         <div class="header">
             <div class="corner-box-wrapper">
                 <div class="corner-box">
-                    <div class="content two-columns"><label>Name & Pronouns</label><input
-                            value="Kiri Candleheart" /><label>Class</label><input value="Bard" /></div>
+                    <div class="content two-columns"><label data-i18n="name-and-pronouns">Name & Pronouns</label><input
+                            value="Kiri Candleheart" /><label data-i18n="class">Class</label><input value="Bard" />
+                    </div>
                 </div>
             </div>
             <div class="corner-box-wrapper">
                 <div class="corner-box">
-                    <div class="content two-columns"><label>Folk</label><input
-                            value="Boggart"><label>Homeland</label><input value="Fleabag County" /></div>
+                    <div class="content two-columns"><label data-i18n="folk">Folk</label><input value="Boggart"><label
+                            data-i18n="homeland">Homeland</label><input value="Fleabag County" /></div>
                 </div>
             </div>
             <div class="xp-rows">
@@ -20,12 +21,12 @@
                     class="xp-background" />
                 <div class="corner-box-wrapper">
                     <div class="corner-box">
-                        <div class="content two-columns"><label>LV</label><input /></div>
+                        <div class="content two-columns"><label data-i18n="lv">LV</label><input /></div>
                     </div>
                 </div>
                 <div class="corner-box-wrapper">
                     <div class="corner-box">
-                        <div class="content two-columns"><label>XP</label><input /></div>
+                        <div class="content two-columns"><label data-i18n="xp">XP</label><input /></div>
                     </div>
                 </div>
             </div>
@@ -35,10 +36,14 @@
         <!--********* NAV BAR **********-->
         <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="inventory" />
         <div class="nav-bar">
-            <button type="action" name="act_attributes" class="sheet-button0">Attributes & Perks</button>
-            <button type="action" name="act_inventory" class="sheet-button1">Inventory & Crafting</button>
-            <button type="action" name="act_background" class="sheet-button2">Background & Notes</button>
+            <button type="action" name="act_attributes" class="sheet-button0"
+                data-i18n="attributes-and-abilities">Attributes & Abilities</button>
+            <button type="action" name="act_inventory" class="sheet-button1"
+                data-i18n="inventory-and-crafting">Inventory & Crafting</button>
+            <button type="action" name="act_background" class="sheet-button2"
+                data-i18n="background-and-notes">Background & Notes</button>
         </div>
+        <!--********* SHEET - ATTRIBUTES & ABILITIES **********-->
         <div class="sheet-attributes">
             <div class="attribute-box">
                 <div>
@@ -58,6 +63,33 @@
                     <li data-i18n="perception">Perception</li>
                 </ul>
             </div>
+            <div class="stat-box stat-courage">
+                <h2 data-i18n="courage">Courage</h2>
+                <input value="15" class="big" />
+                <input value="15" class="small" />
+            </div>
+            <div class="corner-box-wrapper side" style="grid-row-end: span 3;">
+                <label class="corner-box-header" data-i18n="proficiencies">Proficiencies</label>
+                <div class="corner-box">
+                    <div class=content><textarea rows="3">Blending into a Crowd, Writing</textarea></div>
+                </div>
+                <label class="corner-box-header" data-i18n="conditions">Conditions</label>
+                <div class="corner-box">
+                    <div class=content><textarea rows="3"></textarea></div>
+                </div>
+            </div>
+            <div class="corner-box-wrapper side" style="grid-row-end: span 3;">
+                <label class="corner-box-header" data-i18n="deficiencies">Deficiencies</label>
+                <div class="corner-box">
+                    <div class=content><textarea rows="3"></textarea></div>
+                </div>
+                <label class="corner-box-header" data-i18n="heroic-titles">Heroic Titles</label>
+                <div class="corner-box">
+                    <div class=content><textarea rows="3"></textarea></div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div></div>
             <div class="attribute-box">
                 <div>
                     <h2 data-i18n="vigor">Vigor</h2>
@@ -76,10 +108,22 @@
                     <li data-i18n="vitality">Vitality</li>
                 </ul>
             </div>
-            <div></div>
+            <div class="stat-box stat-attack">
+                <h2 data-i18n="attack">Attack</h2>
+                <input value="-1" class="big" />
+                <input value="1d4" class="small" />
+                <div style="display:block; width: 0; height: 0; overflow: visible;"><img
+                        style="opacity: 0.2; min-width: 97px ; min-height: 97px;"
+                        src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/stats_2.png" /></div>
+            </div>
             <div class="separator"></div>
-            <div class="separator"></div>
             <div></div>
+            <div style="grid-column-end: span 2; grid-row-end: span 4;" class="note-box">
+                <div>
+                    <h2 data-i18n="perks-and-abilities">Perks & Abilities</h2>
+                    <textarea rows="9"></textarea>
+                </div>
+            </div>
             <div class="attribute-box">
                 <div>
                     <h2 data-i18n="knack">Knack</h2>
@@ -98,6 +142,13 @@
                     <li data-i18n="trickery" data-i18n="trickery">Trickery</li>
                 </ul>
             </div>
+            <div class="stat-box stat-defense">
+                <h2 data-i18n="defense">Defense</h2>
+                <input value="-1" class="big" />
+                <input value="" class="small" />
+            </div>
+            <div class="separator"></div>
+            <div></div>
             <div class="attribute-box">
                 <div>
                     <h2 data-i18n="knowhow">Knowhow</h2>
@@ -116,26 +167,77 @@
                     <li data-i18n="wilderness">Wilderness</li>
                 </ul>
             </div>
-            <div></div>
+            <div class="stat-box stat-quest">
+                <h2 data-i18n="quest">Quest Pts.</h2>
+                <input value="3" class="big" />
+            </div>
         </div>
+        <!--********* SHEET - INVENTORY AND CRAFTING **********-->
         <div class="sheet-inventory">
-            <h2>Journal/Notes</h2>
-            <span>Journal/Notes Stuff Goes here</span>
+            Inventory and Crafting.
         </div>
+        <!--********* SHEET - BACKGROUND AND NOTES **********-->
         <div class="sheet-background">
-            <h2>Config/Settings</h2>
-            <span>Sheet Config/Settings goes here</span>
+            <div class="corner-box-wrapper">
+                <div class="corner-box">
+                    <div class="content">
+                        <label class="hint" data-i18n="ideals">Ideals</label>
+                        <section class="sparkle">&#x1F7C5;</section>
+                        <section data-i18n="ideals-hint" class="hint">Gain individual XP if you demonstrate your ideals</section>
+                        <textarea rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="corner-box-wrapper">
+                <div class="corner-box">
+                    <div class="content">
+                        <label class="hint" data-i18n="flaws">Flaws</label>
+                        <section class="sparkle">&#x1F7C5;</section>
+                        <section data-i18n="flaws-hint" class="hint">Gain individual XP if you demonstrate your flaws</section>
+                        <textarea rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="note-box">
+                <div>
+                    <h2 data-i18n="personal-quest" class="hint">Personal Quest</h2>
+                    <section class="sparkle">&#x1F7C5;</section>
+                    <section data-i18n="personal-quest-hint" class="hint">Gain party  XP if you pursue your personal quest</section>
+                    <textarea rows="4"></textarea>
+                </div>
+            </div>
+            <div class="note-box">
+                <div>
+                    <h2 data-i18n="relationships" class="hint">Relationships</h2>
+                    <section class="sparkle">&#x1F7C5;</section>
+                    <section data-i18n="relationships-hint" class="hint">Gain party  XP if you build on a relationship</section>
+                    <textarea rows="4"></textarea>
+                </div>
+            </div>
+            <div class="note-box">
+                <div>
+                    <h2 data-i18n="backstory" class="hint">Backstory</h2>
+                    <section class="sparkle">&#x1F7C5;</section>
+                    <section data-i18n="backstory-hint" class="hint">Gain individual XP if you tell a story about your past</section>
+                    <textarea rows="8"></textarea>
+                </div>
+            </div>
+            <div class="note-box">
+                <div>
+                    <h2 data-i18n="other-notes" class="hint">Other Notes</h2>
+                    <textarea rows="8"></textarea>
+                </div>
+            </div>
         </div>
     </div>
     <!--********* FOOTER **********-->
     <div class="footer">
-        <span>Character Sheet by </span><a href="https://roll20.net/">Blaze Sanecki</a><span>, Land of Eem by
-        </span><a href="https://landofeem.com/">Ben Costa & James Parks</a>
-        <span>Version </span><span name="attr_version"></span>
+        <span>Character Sheet (v.<span name="attr_version"></span>) by </span><a href="https://roll20.net/">Blaze
+            Sanecki</a>; <a href="https://landofeem.com/">Land of Eem</a> <span>by Ben Costa & James Parks</span>
     </div>
 </div>
 <!--********* HIDDEN ATTRIBUTES **********-->
-<input type="hidden" name="attr_version" value="1.201" />
+<input type="hidden" name="attr_version" value="1.0.0" />
 
 <!--********* ROLL TEMPLATE **********-->
 <div class="rolltemplates">
@@ -171,3 +273,4 @@ buttonlist.forEach(button => {
     });
 });
 </script>
+<script src="https://kit.fontawesome.com/093deaa60b.js" crossorigin="roll20"></script>

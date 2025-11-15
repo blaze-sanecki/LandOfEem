@@ -76,10 +76,6 @@
     position: relative;
 }
 
-.corner-box.with-header {
-    z-index: -1;
-}
-
 .corner-box::before {
     shape-rendering: geometricPrecision;
     display: block;
@@ -94,13 +90,19 @@
     z-index: -1;
 }
 
-.corner-box-wrapper .header {
+.corner-box-wrapper .corner-box-header {
     margin-bottom: -12px;
-    margin-left: 16px;
+    margin-left: 8px;
     background-color: white;
+    color: #cc9133;
+    text-transform: uppercase;
     height: 16px;
     width: fit-content;
     padding: 4px;
+    position: relative;
+    z-index: 1;
+    font: 13px 'New Atten', sans-serif;
+    font-weight: 700;
 }
 
 .corner-box .content {
@@ -126,6 +128,7 @@
     height: 100%;
     margin-bottom: 0;
     max-height: 26px;
+    line-height: 13px;
 }
 
 .corner-box input {
@@ -229,6 +232,7 @@
     color: #000;
 }
 
+.stat-box h2,
 .attribute-box h2 {
     font-size: 16px;
     color: #cc9133;
@@ -242,7 +246,7 @@
 
 .ui-dialog .charsheet .attribute-box input {
     border: none;
-    border-bottom: 1.5px solid #cc9133;
+    border-bottom: 0.5px solid #cc9133;
     border-radius: 0;
     background-color: #fff;
     width: 22px;
@@ -254,9 +258,32 @@
     text-align: right;
 }
 
-.sheet-attributes {
+.pc .sheet-attributes {
     padding-top: 16px;
-    grid-template-columns: repeat(2, minmax(auto, 220px)) auto;
+    grid-template-columns: minmax(auto, 220px) minmax(auto, 130px) 1fr 1fr;
+}
+
+.pc .sheet-background {
+    grid-template-columns: auto auto;
+    grid-template-rows: min-content minmax(100px, auto) minmax(100px, auto);
+    padding-bottom:0!important;
+}
+
+.sheet-background .corner-box-wrapper {
+    margin-top: 8px;
+    height: 73px;
+    margin-bottom: 25.5px;
+}
+
+.sheet-background textarea {
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.sheet-background .corner-box .content textarea {
+    padding-top:0;
+    padding-bottom: 0;
+    height: 56px;
 }
 
 .separator {
@@ -270,27 +297,17 @@
     .container {
         width: unset;
     }
-
-    .sheet-attributes {
-    }
 }
 
 @media (min-width: 880px) {
     .container {
         width: unset;
     }
-
-    .sheet-attributes {
-    }
 }
 
 @media (min-width: 992px) {
     .container {
         width: unset;
-    }
-
-    .sheet-attributes {
-        grid-template-columns: auto auto auto auto;
     }
 }
 
@@ -316,6 +333,198 @@
     color: black;
 }
 
+
+.stat-box {
+    font-family: 'New Atten', sans-serif;
+    font-size: 16px;
+    max-height: 100px;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.ui-dialog .charsheet .stat-box input.big {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+}
+
+.ui-dialog .charsheet .stat-box input.small {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    border-radius: 8px;
+}
+
+.stat-box.stat-defense {
+    position: relative;
+    background: 0px 22px url("https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/stats_3.png") no-repeat;
+    background-size: auto 70px;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+
+    input.big {
+        top: 34px;
+        left: 12px;
+    }
+
+    input.small {
+        top: 53px;
+        left: 68px;
+        border: solid 2px lightgray !important;
+    }
+}
+
+.stat-box.stat-attack {
+    position: relative;
+    z-index: 1;
+
+    input.big {
+        top: 36px;
+        left: 5px;
+        z-index: 1;
+    }
+
+    input.small {
+        top: 23px;
+        left: 68px;
+        border: solid 2px lightgray !important;
+        z-index: 1;
+    }
+}
+
+.stat-box.stat-courage {
+    position: relative;
+    background: 0px 22px url("https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/stats_1.png") no-repeat;
+    background-size: auto 58px;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+
+    input.big {
+        top: 28px;
+        left: 9px;
+    }
+
+    input.small {
+        top: 44px;
+        left: 64px;
+        border: solid 2px lightgray !important;
+    }
+}
+
+.stat-box.stat-quest {
+    position: relative;
+    background: 0px 22px url("https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/stats_4.png") no-repeat;
+    background-size: 90px 68px;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+
+    input.big {
+        top: 40px;
+        left: 15px;
+    }
+}
+
+.note-box {
+    margin-left: 8px;
+    margin-right: 16px;
+}
+
+.note-box textarea {
+    border: none;
+    background-color: transparent;
+    background-image:
+        linear-gradient(#eee 2px, transparent 2px);
+    background-size: 100% 21px;
+    background-attachment: local;
+    font-family: 'New Atten', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-top: -4px;
+    color: black;
+    resize: none;
+    height: 100%;
+    width: 100%;
+}
+
+.note-box h2 {
+    font-family: 'New Atten', sans-serif;
+    font-size: 16px;
+    color: #cc9133;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 22px;
+    overflow: visible;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.corner-box-wrapper.side {
+    margin-top: 0;
+    height: 60px;
+
+    .corner-box {
+        margin-bottom: 8px;
+    }
+}
+
+.corner-box .content textarea {
+    width: -webkit-fill-available;
+    resize: none;
+    line-height: 18px;
+    font-family: 'New Atten', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 54px;
+    border: none;
+    background-color: transparent;
+}
+
+.sparkle{
+    font-size: 11px;
+    color: #cc9133;
+    display: inline-block;
+    vertical-align: middle;
+    width: fit-content;
+    margin-left:-4px;
+    margin-right:-2px;
+}
+
+h2.hint, label.hint{
+    width: fit-content;
+    display: inline-block;
+}
+
+section.hint{
+    font-size: 10px;
+    color: gray;
+    display: inline-flex;
+    width: fit-content;
+    vertical-align: middle;
+    font-family: 'New Atten', sans-serif;
+}
+
+.note-box .hint, .note-box .sparkle{
+    margin-top: -2px;
+}
+
+.note-box h2.hint{
+    margin-right:3px;
+}
+
 /*================*/
 /* Sheet Styles */
 /*================*/
@@ -332,7 +541,7 @@
     color: #cc9133;
     display: grid;
     height: 100px;
-    grid-template-columns: auto auto 100px 220px;
+    grid-template-columns: 5fr 4fr 100px 190px;
 }
 
 .pc .header .frame {
@@ -348,7 +557,8 @@
 .pc .header .logo {
     height: 62px;
     margin: 20px;
-    margin-left: 12px;
+    margin-left: 4px;
+    margin-right: 0px;
     max-width: none;
 }
 
@@ -392,4 +602,13 @@
 .pc .sheet-tabstoggle[value="inventory"]~div.sheet-inventory,
 .pc .sheet-tabstoggle[value="background"]~div.sheet-background {
     display: grid;
+}
+
+.footer {
+    font: 10px 'New Atten', sans-serif;
+    color: #cc9133;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-bottom: 6px;
 }
