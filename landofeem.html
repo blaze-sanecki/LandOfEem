@@ -363,7 +363,7 @@
     <!--********* FOOTER **********-->
     <div class="footer">
         <span>Character Sheet (v.<span name="attr_version"></span>) by </span><a href="https://github.com/blaze-sanecki/LandOfEem">Blaze
-            Sanecki</a>; <a href="https://landofeem.com/">Land of Eem</a> <span>by Ben Costa & James Parks</span>
+            Sanecki</a>, made with a blessing from <span>by Ben Costa & James Parks</span> - creators of the <a href="https://landofeem.com/"><b>Land of Eem</b></a>.
     </div>
 </div>
 <!--********* HIDDEN ATTRIBUTES **********-->
@@ -419,7 +419,7 @@ on(fields.map(field => "change:" + field).join(" "), (eventinfo) => {
 });
 
 //********* VALIDATE ALL NUMBER VALUES ON CHARACTER SHEET OPEN **********/
-const unsigned = ["courage", "courage_max", "quest_pts", "block", "inventory_slots", "inventory_slots_max", "material_number", "coins_copper", "coins_silver", "coins_gold", "coins_ancient", "rations_d6", "rations_d8", "rations_d10"];
+const unsigned = ["courage", "courage_max", "quest_pts", "block", "inventory_slots", "inventory_slots_max", "material_number", "coins_copper", "coins_silver", "coins_gold", "coins_ancient", "rations_d6", "rations_d8", "rations_d10", "lv", "xp"];
 on("sheet:opened", (eventinfo) => {
     fields.forEach((fieldName) => {
         getAttrs([fieldName], (values) => {
