@@ -400,14 +400,14 @@
 
 /* Attributes Tab Layout */
 .pc .sheet-attributes {
-    grid-template-columns: minmax(auto, 235px) minmax(auto, 130px) 1fr 1fr;
+    grid-template-columns: minmax(auto, 240px) minmax(auto, 130px) 1fr 1fr;
     padding: 10px 8px 9px 16px !important;
 }
 /* Attribute Box Component */
 .attribute-box {
     font-family: 'New Atten', sans-serif;
     font-size: 16px;
-    grid-template-columns: 90px 30px auto;
+    grid-template-columns: 95px 35px auto;
     display: grid;
     width: 200px;
     align-items: center;
@@ -449,13 +449,13 @@
     border-bottom: 0.5px solid #cc9133;
     border-radius: 0;
     background-color: transparent;
-    width: 22px;
+    width: 30px;
     font-size: 16px;
     height: 16px;
     padding: 3px;
     padding-left: 0;
     color: #000;
-    text-align: right;
+    text-align: center;
 }
 
 /* Dice Field Component */
@@ -503,7 +503,7 @@
 
 .ui-dialog .charsheet .stat-box input.big {
     position: absolute;
-    width: 40px;
+    width: 60px;
     height: 40px;
     border: none;
     background-color: transparent;
@@ -549,7 +549,7 @@ label.small {
 
 .stat-box.stat-courage input.big {
     top: 28px;
-    left: 9px;
+    left: 1px;
 }
 
 .stat-box.stat-courage input.small {
@@ -571,7 +571,7 @@ label.small {
 
 .stat-box.stat-attack input.big {
     top: 36px;
-    left: 5px;
+    left: -5px;
     z-index: 1;
 }
 
@@ -598,7 +598,7 @@ label.small {
 
 .stat-box.stat-defense input.big {
     top: 34px;
-    left: 12px;
+    left: 2px;
 }
 
 .stat-box.stat-defense input.small {
@@ -623,7 +623,7 @@ label.small {
 
 .stat-box.stat-quest input.big {
     top: 40px;
-    left: 18px;
+    left: 8px;
 }
 
 /* Note Box Component */
@@ -1030,7 +1030,7 @@ label.small {
 .pc .sheet-inventory .stripe .corner-box-wrapper {
     float: left;
     height: 32px;
-    width: 120px;
+    width: 132px;
     margin: 0;
     margin-top: -3px;
     padding-right: 8px;
