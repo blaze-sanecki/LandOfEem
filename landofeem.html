@@ -206,7 +206,7 @@
                 <div class="note-box">
                     <div>
                         <h2 class="worn" data-i18n="worn">Worn</h2>
-                        <textarea rows="6"></textarea>
+                        <textarea rows="6" name="attr_worn"></textarea>
                         <div class="watermark worn"><img class="worn"
                                 src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/worn.png" />
                         </div>
@@ -216,7 +216,7 @@
                 <div class="note-box">
                     <div>
                         <h2 class="carried" data-i18n="carried">Carried</h2>
-                        <textarea rows="6"></textarea>
+                        <textarea rows="6" name="attr_carried"></textarea>
                         <div class="watermark carried"><img class="carried"
                                 src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/carried.png" />
                         </div>
@@ -232,7 +232,7 @@
                         <div class="corner-box-wrapper">
                             <div class="corner-box">
                                 <div class="content two-columns"><label data-i18n="num-materials">No. of
-                                        materials</label><input /></div>
+                                        materials</label><input type="number" name="attr_material_number" /></div>
                             </div>
                         </div>
                     </div>
@@ -275,13 +275,13 @@
                     <div>
                         <div class="coins fake-textarea">
                             <section class="small" data-i18n="copper">Copper</section>
-                            <section class="hint">d6</section><input type="number" />
+                            <section class="hint">d6</section><input type="number" name="attr_coins_copper" />
                             <section class="small" data-i18n="silver">Silver</section>
-                            <section class="hint">d8</section><input type="number" />
+                            <section class="hint">d8</section><input type="number" name="attr_coins_silver" />
                             <section class="small" data-i18n="gold">Gold</section>
-                            <section class="hint">d10</section><input type="number" />
+                            <section class="hint">d10</section><input type="number" name="attr_coins_gold" />
                             <section class="small" data-i18n="ancient">Ancient</section>
-                            <section class="hint">d12</section><input type="number" />
+                            <section class="hint">d12</section><input type="number" name="attr_coins_ancient" />
                         </div>
                     </div>
                 </div>
@@ -289,9 +289,9 @@
                 <div class="note-box">
                     <div>
                         <div class="rations fake-textarea">
-                            <section class="hint">d6</section><input type="number" />
-                            <section class="hint">d8</section><input type="number" />
-                            <section class="hint">d10</section><input type="number" />
+                            <section class="hint">d6</section><input type="number" name="attr_rations_d6" />
+                            <section class="hint">d8</section><input type="number" name="attr_rations_d8" />
+                            <section class="hint">d10</section><input type="number" name="attr_rations_d10" />
                         </div>
                     </div>
                 </div>
@@ -419,7 +419,7 @@ on(fields.map(field => "change:" + field).join(" "), (eventinfo) => {
 });
 
 //********* VALIDATE ALL NUMBER VALUES ON CHARACTER SHEET OPEN **********/
-const unsigned = ["courage", "courage_max", "quest_pts", "block"];
+const unsigned = ["courage", "courage_max", "quest_pts", "block", "inventory_slots", "inventory_slots_max", "material_number", "coins_copper", "coins_silver", "coins_gold", "coins_ancient", "rations_d6", "rations_d8", "rations_d10"];
 on("sheet:opened", (eventinfo) => {
     fields.forEach((fieldName) => {
         getAttrs([fieldName], (values) => {

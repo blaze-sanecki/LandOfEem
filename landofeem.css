@@ -54,7 +54,7 @@
 .container {
     --radiusouter: 8px;
     --radius: 7px;
-    --thickness: 1.5px;
+    --thickness: 2px;
     background-color: #faf4eb;
     margin: 0;
     padding: 0;
@@ -97,7 +97,16 @@
     shape-rendering: geometricPrecision;
     height: 100%;
     padding: var(--radiusouter);
-    clip-path: shape(from 0 var(--radiusouter), line to var(--radiusouter) 0, line to calc(100% - var(--radiusouter)) 0, line to 100% var(--radiusouter), line to 100% calc(100% - var(--radiusouter)), line to calc(100% - var(--radiusouter)) 100%, line to var(--radiusouter) 100%, line to 0 calc(100% - var(--radiusouter)), close);
+    clip-path: polygon(
+        0 var(--radiusouter),
+        var(--radiusouter) 0,
+        calc(100% - var(--radiusouter)) 0,
+        100% var(--radiusouter),
+        100% calc(100% - var(--radiusouter)),
+        calc(100% - var(--radiusouter)) 100%,
+        var(--radiusouter) 100%,
+        0 calc(100% - var(--radiusouter))
+    );
     background-color: #cc9133;
     position: relative;
 }
@@ -112,7 +121,16 @@
     top: calc(var(--thickness) * 1 - var(--radiusouter));
     width: calc(100% - var(--thickness) * 2 + var(--radiusouter) * 2);
     height: calc(100% - var(--thickness) * 2 + var(--radiusouter) * 2);
-    clip-path: shape(from 0 var(--radius), line to var(--radius) 0, line to calc(100% - var(--radius)) 0, line to 100% var(--radius), line to 100% calc(100% - var(--radius)), line to calc(100% - var(--radius)) 100%, line to var(--radius) 100%, line to 0 calc(100% - var(--radius)), close);
+    clip-path: polygon(
+        0 var(--radius),
+        var(--radius) 0,
+        calc(100% - var(--radius)) 0,
+        100% var(--radius),
+        100% calc(100% - var(--radius)),
+        calc(100% - var(--radius)) 100%,
+        var(--radius) 100%,
+        0 calc(100% - var(--radius))
+    );
     background-color: #fff;
     z-index: -1;
 }
@@ -177,7 +195,7 @@
     width: 100%;
     height: auto;
     border-radius: 0;
-    color: black;
+    color: #000;
     margin: 0;
 }
 
@@ -192,6 +210,7 @@
     height: 54px;
     border: none;
     background-color: transparent;
+    color: #000;
 }
 
 /* Corner Box - Side Variant */
@@ -276,7 +295,7 @@
     display: inline-block;
     padding: 5px 10px;
     padding-bottom: 7px;
-    border: 1.5px solid #cc9133;
+    border: 2px solid #cc9133;
     border-bottom: none;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
@@ -300,7 +319,7 @@
 .sheet-background,
 .sheet-notes {
     display: none;
-    border: 1.5px solid #cc9133;
+    border: 2px solid #cc9133;
     border-top: none;
     margin: 8px;
     margin-top: 0;
@@ -459,7 +478,7 @@
     font-size: 24px;
     font-weight: 700;
     text-align: center;
-    color: black;
+    color: #000;
 }
 
 /* Stat Box Base Styles */
@@ -491,7 +510,7 @@
     font-size: 24px;
     font-weight: 700;
     text-align: center;
-    color: black;
+    color: #000;
 }
 
 .ui-dialog .charsheet .stat-box input.small {
@@ -503,7 +522,7 @@
     font-size: 16px;
     font-weight: 700;
     text-align: center;
-    color: black;
+    color: #000;
     border-radius: 8px;
 }
 
@@ -536,7 +555,7 @@ label.small {
 .stat-box.stat-courage input.small {
     top: 44px;
     left: 64px;
-    border: solid 2px lightgray !important;
+    border: solid 2px #ccc !important;
 }
 
 .stat-box.stat-courage label.small {
@@ -559,7 +578,7 @@ label.small {
 .stat-box.stat-attack input.small {
     top: 23px;
     left: 68px;
-    border: solid 2px lightgray !important;
+    border: solid 2px #ccc !important;
     z-index: 1;
 }
 
@@ -585,7 +604,7 @@ label.small {
 .stat-box.stat-defense input.small {
     top: 53px;
     left: 68px;
-    border: solid 2px lightgray !important;
+    border: solid 2px #ccc !important;
 }
 
 .stat-box.stat-defense label.small {
@@ -637,7 +656,7 @@ label.small {
     font-weight: 400;
     line-height: 21px;
     margin-top: -4px;
-    color: black;
+    color: #000;
     resize: none;
     height: 100%;
     width: 100%;
@@ -778,43 +797,42 @@ label.small {
 }
 
 .pc .sheet-inventory .inventory-lower .fake-textarea.crafting {
-    padding-top: 5px;
     margin-top: 6px;
     line-height: 16px;
     font-size: 14px;
     background-size: 100% 16px;
     background-position-y: -2px;
-    margin-left:24px;
-    width:calc(100% - 24px);
+    margin-left: 24px;
+    width: calc(100% - 24px);
     height: 128px;
     padding-right: 8px;
 }
 
 .pc .sheet-inventory .inventory-lower .fake-textarea.coins section {
-    display:inline-block;
+    display: inline-block;
     line-height: 21px;
-    margin-right:4px;
+    margin-right: 4px;
     vertical-align: inherit;
 }
 
 .pc .sheet-inventory .inventory-lower .fake-textarea.coins section.small {
-    font-size:10px;
-    color:#cc9133;
-    font-weight:600;
+    font-size: 10px;
+    color: #cc9133;
+    font-weight: 600;
 }
 
-.pc .sheet-inventory .inventory-lower section.hint{
-    color:#999;
-    margin-top:0;
-    padding-left:4px;
-    padding-right:4px;
+.pc .sheet-inventory .inventory-lower section.hint {
+    color: #999;
+    margin-top: 0;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .pc .sheet-inventory .inventory-lower .fake-textarea.coins {
     padding-top: 2px;
     margin-top: 34px;
     height: 84px;
-    display:grid;
+    display: grid;
     grid-template-columns: min-content min-content auto;
     grid-template-rows: repeat(4, 21px);
     padding-right: 8px;
@@ -824,7 +842,7 @@ label.small {
     padding-top: 2px;
     margin-top: 44px;
     height: 63px;
-    display:grid;
+    display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: repeat(3, 21px);
     align-items: center;
@@ -832,23 +850,34 @@ label.small {
     padding-right: 8px;
 }
 
-.pc .sheet-inventory .inventory-lower input{
+.pc .sheet-inventory .inventory-lower input {
     border: none;
     background-color: transparent;
     font-family: 'New Atten', sans-serif;
     font-size: 16px;
     font-weight: normal;
     color: #000;
-    width:inherit;
+    width: inherit;
     text-align: center;
 }
 
 .pc .sheet-inventory .inventory-lower .fake-textarea textarea {
-    height: 32px;
+    height: 34px;
     line-height: 16px;
     font-size: 14px;
-    padding:0;
-    background:none;
+    padding: 1px 2px;
+    margin: 0;
+    margin-bottom: -2px;
+    background: none;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+/* Firefox-specific adjustment */
+@-moz-document url-prefix() {
+    .pc .sheet-inventory .inventory-lower .fake-textarea textarea {
+        padding: 0;
+    }
 }
 
 /* Inventory - Stripe Upper */
@@ -1032,7 +1061,7 @@ label.hint {
 
 section.hint {
     font-size: 10px;
-    color: gray;
+    color: #999;
     display: inline-flex;
     width: fit-content;
     vertical-align: middle;
