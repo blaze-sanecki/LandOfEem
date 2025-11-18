@@ -875,6 +875,8 @@ label.small {
 
 /* Firefox-specific adjustment */
 @-moz-document url-prefix() {
+/* Firefox-specific adjustment using feature query */
+@supports (-moz-appearance: none) {
     .pc .sheet-inventory .inventory-lower .fake-textarea textarea {
         padding: 0;
     }
