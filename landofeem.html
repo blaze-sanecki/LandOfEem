@@ -404,9 +404,12 @@ buttonlist.forEach(button => {
     });
 });
 
+//********* DEFINE SIGNED AND UNSIGNED ATTRIBUTES **********/
+const signed = ["attack", "defense", "vim", "charm", "inspire", "mettle", "perception", "vigor", "athletics", "intimidate", "might", "vitality", "knack", "nimbleness", "search", "sneak", "trickery", "knowhow", "lore", "realms", "tinker", "wilderness", "treasure_hunting"];
+const unsigned = ["courage", "courage_max", "quest_pts", "block", "inventory_slots", "inventory_slots_max", "material_number", "coins_copper", "coins_silver", "coins_gold", "coins_ancient", "rations_d6", "rations_d8", "rations_d10", "lv", "xp"];
+
 //********* VALIDATE SIGNED NUMBER VALUES ON CHANGE **********/
-const fields = ["attack", "defense", "vim", "charm", "inspire", "mettle", "perception", "vigor", "athletics", "intimidate", "might", "vitality", "knack", "nimbleness", "search", "sneak", "trickery", "knowhow", "lore", "realms", "tinker", "wilderness", "treasure_hunting"];
-on(fields.map(field => "change:" + field).join(" "), (eventinfo) => {
+on(signed.map(field => "change:" + field).join(" "), (eventinfo) => {
     const fieldName = eventinfo.sourceAttribute;
     getAttrs([fieldName], (values) => {
         let val = parseInt(values[fieldName]) || 0;
@@ -417,11 +420,22 @@ on(fields.map(field => "change:" + field).join(" "), (eventinfo) => {
         }
     });
 });
+//********* VALIDATE UNSIGNED NUMBER VALUES ON CHANGE (FOR FIREFOX BROWSER) **********/
+on(unsigned.map(field => "change:" + field).join(" "), (eventinfo) => {
+    const fieldName = eventinfo.sourceAttribute;
+    getAttrs([fieldName], (values) => {
+        let val = parseInt(values[fieldName]);
+        if(!val) {
+            setAttrs({
+                [fieldName]: eventinfo.previousValue || 0
+            });
+        }
+    });
+});
 
 //********* VALIDATE ALL NUMBER VALUES ON CHARACTER SHEET OPEN **********/
-const unsigned = ["courage", "courage_max", "quest_pts", "block", "inventory_slots", "inventory_slots_max", "material_number", "coins_copper", "coins_silver", "coins_gold", "coins_ancient", "rations_d6", "rations_d8", "rations_d10", "lv", "xp"];
 on("sheet:opened", (eventinfo) => {
-    fields.forEach((fieldName) => {
+    signed.forEach((fieldName) => {
         getAttrs([fieldName], (values) => {
         let val = parseInt(values[fieldName]) || 0;
             if(val >= 0 && !values[fieldName].startsWith("+")) {
