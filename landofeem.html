@@ -54,7 +54,7 @@
         <div class="sheet-attributes">
             <div class="attribute-box">
                 <div>
-                    <h2 data-i18n="vim">Vim</h2>
+                    <button type="roll" name="roll_vim" value="/roll d12"><h2 data-i18n="vim">Vim</h2></button>
                     <div class="dice-field"><input type="text" name="attr_vim" /></div>
                 </div>
                 <ul>
@@ -64,10 +64,10 @@
                     <li><input type="text" name="attr_perception" /></li>
                 </ul>
                 <ul>
-                    <li data-i18n="charm">Charm</li>
-                    <li data-i18n="inspire">Inspire</li>
-                    <li data-i18n="mettle">Mettle</li>
-                    <li data-i18n="perception">Perception</li>
+                    <li><button type="roll" name="roll_charm" data-i18n="charm" value="/roll d12">Charm</button></li>
+                    <li><button type="roll" name="roll_inspire" data-i18n="inspire" value="/roll d12">Inspire</button></li>
+                    <li><button type="roll" name="roll_mettle" data-i18n="mettle" value="/roll d12">Mettle</button></li>
+                    <li><button type="roll" name="roll_perception" data-i18n="perception" value="/roll d12">Perception</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-courage">
@@ -100,7 +100,7 @@
             <div></div>
             <div class="attribute-box">
                 <div>
-                    <h2 data-i18n="vigor">Vigor</h2>
+                    <button type="roll" name="roll_vigor" value="/roll d12"><h2 data-i18n="vigor">Vigor</h2></button>
                     <div class="dice-field"><input type="text" name="attr_vigor" /></div>
                 </div>
                 <ul>
@@ -110,14 +110,14 @@
                     <li><input type="text" name="attr_vitality" /></li>
                 </ul>
                 <ul>
-                    <li data-i18n="athletics">Athletics</li>
-                    <li data-i18n="intimidate">Intimidate</li>
-                    <li data-i18n="might">Might</li>
-                    <li data-i18n="vitality">Vitality</li>
+                    <li><button type="roll" name="roll_athletics" data-i18n="athletics" value="/roll d12">Athletics</button></li>
+                    <li><button type="roll" name="roll_intimidate" data-i18n="intimidate" value="/roll d12">Intimidate</button></li>
+                    <li><button type="roll" name="roll_might" data-i18n="might" value="/roll d12">Might</button></li>
+                    <li><button type="roll" name="roll_vitality" data-i18n="vitality" value="/roll d12">Vitality</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-attack">
-                <h2 data-i18n="attack">Attack</h2>
+                <button type="roll" name="roll_attack" value="/roll d12"><h2 data-i18n="attack">Attack</h2></button>
                 <input type="text" name="attr_attack" class="big" />
                 <input type="text" name="attr_dread" class="small" />
                 <label data-i18n="dread" for="attr_dread" class="small">Dread</label>
@@ -135,7 +135,7 @@
             </div>
             <div class="attribute-box">
                 <div>
-                    <h2 data-i18n="knack">Knack</h2>
+                    <button type="roll" name="roll_knack" value="/roll d12"><h2 data-i18n="knack">Knack</h2></button>
                     <div class="dice-field"><input type="text" name="attr_knack" /></div>
                 </div>
                 <ul>
@@ -145,14 +145,14 @@
                     <li><input type="text" name="attr_trickery" /></li>
                 </ul>
                 <ul>
-                    <li data-i18n="nimbleness">Nimbleness</li>
-                    <li data-i18n="search">Search</li>
-                    <li data-i18n="sneak">Sneak</li>
-                    <li data-i18n="trickery" data-i18n="trickery">Trickery</li>
+                    <li><button type="roll" name="roll_nimbleness" data-i18n="nimbleness" value="/roll d12">Nimbleness</button></li>
+                    <li><button type="roll" name="roll_search" data-i18n="search" value="/roll d12">Search</button></li>
+                    <li><button type="roll" name="roll_sneak" data-i18n="sneak" value="/roll d12">Sneak</button></li>
+                    <li><button type="roll" name="roll_trickery" data-i18n="trickery" value="/roll d12">Trickery</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-defense">
-                <h2 data-i18n="defense">Defense</h2>
+                <button type="roll" name="roll_defense" value="/roll d12"><h2 data-i18n="defense">Defense</h2></button>
                 <input type="text" name="attr_defense" class="big" />
                 <input type="number" name="attr_block" class="small" />
                 <label data-i18n="block" for="attr_block" class="small">Block</label>
@@ -161,7 +161,7 @@
             <div></div>
             <div class="attribute-box">
                 <div>
-                    <h2 data-i18n="knowhow">Knowhow</h2>
+                    <button type="roll" name="roll_knowhow" value="/roll d12"><h2 data-i18n="knowhow">Knowhow</h2></button>
                     <div class="dice-field"><input type="text" name="attr_knowhow" /></div>
                 </div>
                 <ul>
@@ -171,10 +171,10 @@
                     <li><input type="text" name="attr_wilderness" /></li>
                 </ul>
                 <ul>
-                    <li data-i18n="lore">Lore</li>
-                    <li data-i18n="realms">Realms</li>
-                    <li data-i18n="tinker">Tinker</li>
-                    <li data-i18n="wilderness">Wilderness</li>
+                    <li><button type="roll" name="roll_lore" data-i18n="lore" value="/roll d12">Lore</button></li>
+                    <li><button type="roll" name="roll_realms" data-i18n="realms" value="/roll d12">Realms</button></li>
+                    <li><button type="roll" name="roll_tinker" data-i18n="tinker" value="/roll d12">Tinker</button></li>
+                    <li><button type="roll" name="roll_wilderness" data-i18n="wilderness" value="/roll d12">Wilderness</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-quest">
@@ -199,7 +199,7 @@
                 </section>
                 <section>
                     <div class="treasure"><input type="text" name="attr_treasure_hunting" /></div>
-                    <h2 class="treasure" data-i18n="treasure-hunting">Treasure Hunting:</h2>
+                    <button class="treasure" type="roll" name="roll_treasure_hunting" value="/roll d12"><h2 class="treasure" data-i18n="treasure-hunting">Treasure Hunting:</h2></button>
                 </section>
             </div>
             <div class="inventory-upper">
