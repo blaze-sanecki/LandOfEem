@@ -54,7 +54,9 @@
         <div class="sheet-attributes">
             <div class="attribute-box">
                 <div>
-                    <button type="roll" name="roll_vim" value="/roll d12"><h2 data-i18n="vim">Vim</h2></button>
+                    <button type="action" name="act_vim">
+                        <h2 data-i18n="vim">Vim</h2>
+                    </button>
                     <div class="dice-field"><input type="text" name="attr_vim" /></div>
                 </div>
                 <ul>
@@ -65,9 +67,11 @@
                 </ul>
                 <ul>
                     <li><button type="roll" name="roll_charm" data-i18n="charm" value="/roll d12">Charm</button></li>
-                    <li><button type="roll" name="roll_inspire" data-i18n="inspire" value="/roll d12">Inspire</button></li>
+                    <li><button type="roll" name="roll_inspire" data-i18n="inspire" value="/roll d12">Inspire</button>
+                    </li>
                     <li><button type="roll" name="roll_mettle" data-i18n="mettle" value="/roll d12">Mettle</button></li>
-                    <li><button type="roll" name="roll_perception" data-i18n="perception" value="/roll d12">Perception</button></li>
+                    <li><button type="roll" name="roll_perception" data-i18n="perception"
+                            value="/roll d12">Perception</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-courage">
@@ -100,7 +104,9 @@
             <div></div>
             <div class="attribute-box">
                 <div>
-                    <button type="roll" name="roll_vigor" value="/roll d12"><h2 data-i18n="vigor">Vigor</h2></button>
+                    <button type="roll" name="roll_vigor" value="/roll d12">
+                        <h2 data-i18n="vigor">Vigor</h2>
+                    </button>
                     <div class="dice-field"><input type="text" name="attr_vigor" /></div>
                 </div>
                 <ul>
@@ -110,14 +116,19 @@
                     <li><input type="text" name="attr_vitality" /></li>
                 </ul>
                 <ul>
-                    <li><button type="roll" name="roll_athletics" data-i18n="athletics" value="/roll d12">Athletics</button></li>
-                    <li><button type="roll" name="roll_intimidate" data-i18n="intimidate" value="/roll d12">Intimidate</button></li>
+                    <li><button type="roll" name="roll_athletics" data-i18n="athletics"
+                            value="/roll d12">Athletics</button></li>
+                    <li><button type="roll" name="roll_intimidate" data-i18n="intimidate"
+                            value="/roll d12">Intimidate</button></li>
                     <li><button type="roll" name="roll_might" data-i18n="might" value="/roll d12">Might</button></li>
-                    <li><button type="roll" name="roll_vitality" data-i18n="vitality" value="/roll d12">Vitality</button></li>
+                    <li><button type="roll" name="roll_vitality" data-i18n="vitality"
+                            value="/roll d12">Vitality</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-attack">
-                <button type="roll" name="roll_attack" value="/roll d12"><h2 data-i18n="attack">Attack</h2></button>
+                <button type="roll" name="roll_attack" value="/roll d12">
+                    <h2 data-i18n="attack">Attack</h2>
+                </button>
                 <input type="text" name="attr_attack" class="big" />
                 <input type="text" name="attr_dread" class="small" />
                 <label data-i18n="dread" for="attr_dread" class="small">Dread</label>
@@ -135,7 +146,9 @@
             </div>
             <div class="attribute-box">
                 <div>
-                    <button type="roll" name="roll_knack" value="/roll d12"><h2 data-i18n="knack">Knack</h2></button>
+                    <button type="roll" name="roll_knack" value="/roll d12">
+                        <h2 data-i18n="knack">Knack</h2>
+                    </button>
                     <div class="dice-field"><input type="text" name="attr_knack" /></div>
                 </div>
                 <ul>
@@ -145,14 +158,18 @@
                     <li><input type="text" name="attr_trickery" /></li>
                 </ul>
                 <ul>
-                    <li><button type="roll" name="roll_nimbleness" data-i18n="nimbleness" value="/roll d12">Nimbleness</button></li>
+                    <li><button type="roll" name="roll_nimbleness" data-i18n="nimbleness"
+                            value="/roll d12">Nimbleness</button></li>
                     <li><button type="roll" name="roll_search" data-i18n="search" value="/roll d12">Search</button></li>
                     <li><button type="roll" name="roll_sneak" data-i18n="sneak" value="/roll d12">Sneak</button></li>
-                    <li><button type="roll" name="roll_trickery" data-i18n="trickery" value="/roll d12">Trickery</button></li>
+                    <li><button type="roll" name="roll_trickery" data-i18n="trickery"
+                            value="/roll d12">Trickery</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-defense">
-                <button type="roll" name="roll_defense" value="/roll d12"><h2 data-i18n="defense">Defense</h2></button>
+                <button type="roll" name="roll_defense" value="/roll d12">
+                    <h2 data-i18n="defense">Defense</h2>
+                </button>
                 <input type="text" name="attr_defense" class="big" />
                 <input type="number" name="attr_block" class="small" />
                 <label data-i18n="block" for="attr_block" class="small">Block</label>
@@ -161,7 +178,9 @@
             <div></div>
             <div class="attribute-box">
                 <div>
-                    <button type="roll" name="roll_knowhow" value="/roll d12"><h2 data-i18n="knowhow">Knowhow</h2></button>
+                    <button type="roll" name="roll_knowhow" value="/roll d12">
+                        <h2 data-i18n="knowhow">Knowhow</h2>
+                    </button>
                     <div class="dice-field"><input type="text" name="attr_knowhow" /></div>
                 </div>
                 <ul>
@@ -174,7 +193,8 @@
                     <li><button type="roll" name="roll_lore" data-i18n="lore" value="/roll d12">Lore</button></li>
                     <li><button type="roll" name="roll_realms" data-i18n="realms" value="/roll d12">Realms</button></li>
                     <li><button type="roll" name="roll_tinker" data-i18n="tinker" value="/roll d12">Tinker</button></li>
-                    <li><button type="roll" name="roll_wilderness" data-i18n="wilderness" value="/roll d12">Wilderness</button></li>
+                    <li><button type="roll" name="roll_wilderness" data-i18n="wilderness"
+                            value="/roll d12">Wilderness</button></li>
                 </ul>
             </div>
             <div class="stat-box stat-quest">
@@ -199,7 +219,9 @@
                 </section>
                 <section>
                     <div class="treasure"><input type="text" name="attr_treasure_hunting" /></div>
-                    <button class="treasure" type="roll" name="roll_treasure_hunting" value="/roll d12"><h2 class="treasure" data-i18n="treasure-hunting">Treasure Hunting:</h2></button>
+                    <button class="treasure" type="roll" name="roll_treasure_hunting" value="/roll d12">
+                        <h2 class="treasure" data-i18n="treasure-hunting">Treasure Hunting:</h2>
+                    </button>
                 </section>
             </div>
             <div class="inventory-upper">
@@ -362,47 +384,45 @@
     </div>
     <!--********* FOOTER **********-->
     <div class="footer">
-        <span>Character Sheet (v.<span name="attr_version"></span>) by </span><a href="https://github.com/blaze-sanecki/LandOfEem">Blaze
-            Sanecki</a>, made with a blessing from <span>by Ben Costa & James Parks</span> - creators of the <a href="https://landofeem.com/"><b>Land of Eem</b></a>.
+        <span>Character Sheet (v.<span name="attr_version"></span>) by </span><a
+            href="https://github.com/blaze-sanecki/LandOfEem">Blaze
+            Sanecki</a>, made with a blessing from <span>by Ben Costa & James Parks</span> - creators of the <a
+            href="https://landofeem.com/"><b>Land of Eem</b></a>.
     </div>
 </div>
 <!--********* HIDDEN ATTRIBUTES **********-->
 <input type="hidden" name="attr_version" value="1.0.0" />
 
 <!--********* ROLL TEMPLATE **********-->
-<div class="rolltemplates">
-    <rolltemplate class="sheet-rolltemplate-rolls">
-        <!--- Display a header on the template --->
-        <div class="sheet-template-header">
-            {{#header}}{{header}}{{/header}}
-        </div>
-        <!--- Display the dice roll in the template --->
-        <div class="sheet-template-body">
-            {{#dice}}
-            <div class="sheet-template-row">{{dice}}</div>
-            {{/dice}}
-            <!--- Display a description. This is great for text included with a roll --->
-            {{#desc}}
-            <div class="sheet-template-row">
-                <span class="sheet-template-desc">
-                </span>
+<rolltemplate class="sheet-rolltemplate-check">
+    <div class="sheet-template-container">
+        <h1>{{name}}</h1>
+        <div class="sheet-results">
+            <h4>Result = {{roll}}</h4>
+            <h4>Custom Result = {{computed::roll}}</h4>
+            <h4 class="clearRoll">Custom Expression = {{computed::hint}}</section></h4>
+            {{#rollTotal() computed::roll roll}}
+            <div style="display:none">
+            {{/rollTotal() computed::roll roll}}
+            <h4>Result differs!!!</h4>
+            {{#rollTotal() computed::roll roll}}
             </div>
-            {{/desc}}
+            {{/rollTotal() computed::roll roll}}
         </div>
-    </rolltemplate>
-</div>
+    </div>
+</rolltemplate>
 
 <!--********* SCRIPTS **********-->
 <script type="text/worker">
 //********* TAB BUTTONS **********/
-const buttonlist = ["attributes", "inventory", "background", "notes"];
+const buttonlist = ["attributes", "inventory", "background", "notes"]
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
         setAttrs({
             sheetTab: button
-        });
-    });
-});
+        })
+    })
+})
 
 //********* DEFINE SIGNED AND UNSIGNED ATTRIBUTES **********/
 const signed = ["attack", "defense", "vim", "charm", "inspire", "mettle", "perception", "vigor", "athletics", "intimidate", "might", "vitality", "knack", "nimbleness", "search", "sneak", "trickery", "knowhow", "lore", "realms", "tinker", "wilderness", "treasure_hunting"];
@@ -410,58 +430,137 @@ const unsigned = ["courage", "courage_max", "quest_pts", "block", "inventory_slo
 
 //********* VALIDATE SIGNED NUMBER VALUES ON CHANGE **********/
 on(signed.map(field => "change:" + field).join(" "), (eventinfo) => {
-    const fieldName = eventinfo.sourceAttribute;
+    const fieldName = eventinfo.sourceAttribute
     getAttrs([fieldName], (values) => {
-        let val = parseInt(values[fieldName]) || 0;
-        if(val >= 0  && !values[fieldName].startsWith("+")) {
+        if(eventinfo.sourceType === "sheetworker") {
+            return
+        }
+        let val = parseInt(values[fieldName])
+        if(isNaN(val)) {
+            setAttrs({
+              [fieldName]: "+0"
+            })
+        }
+        else if(val < -3) {
+            setAttrs({
+              [fieldName]: "-3"
+            })
+        }
+        else if(val > 3) {
+            setAttrs({
+              [fieldName]: "+3"
+            })
+        }
+        else if(val >= 0) {
             setAttrs({
                 [fieldName]: "+" + val
-            });
+            })
         }
-    });
-});
+        else {
+            setAttrs({
+                [fieldName]: val
+            })
+        }
+    })
+})
 //********* VALIDATE UNSIGNED NUMBER VALUES ON CHANGE (FOR FIREFOX BROWSER) **********/
 on(unsigned.map(field => "change:" + field).join(" "), (eventinfo) => {
-    const fieldName = eventinfo.sourceAttribute;
+    const fieldName = eventinfo.sourceAttribute
     getAttrs([fieldName], (values) => {
-        let val = parseInt(values[fieldName]);
-        if(!val) {
+        let val = parseInt(values[fieldName])
+        if(isNaN(val)) {
             setAttrs({
                 [fieldName]: eventinfo.previousValue || 0
-            });
+            })
         }
-    });
-});
-
+    })
+})
 //********* VALIDATE ALL NUMBER VALUES ON CHARACTER SHEET OPEN **********/
 on("sheet:opened", (eventinfo) => {
     signed.forEach((fieldName) => {
         getAttrs([fieldName], (values) => {
-        let val = parseInt(values[fieldName]) || 0;
-            if(val >= 0 && !values[fieldName].startsWith("+")) {
+            let val = parseInt(values[fieldName])
+            if(isNaN(val)) {
+                setAttrs({
+                [fieldName]: "+0"
+                })
+            }
+            else if(val < -3) {
+                setAttrs({
+                [fieldName]: "-3"
+                })
+            }
+            else if(val > 3) {
+                setAttrs({
+                [fieldName]: "+3"
+                })
+            }
+            else if(val >= 0) {
                 setAttrs({
                     [fieldName]: "+" + val
-                });
+                })
             }
-        });
-    });
+            else {
+                setAttrs({
+                    [fieldName]: val
+                })
+            }
+        })
+    })
     unsigned.forEach((fieldName) => {
         getAttrs([fieldName], (values) => {
             if(values[fieldName] === "") {
                 setAttrs({
                     [fieldName]: 0
-                });
+                })
             }
-        });
-    });
+        })
+    })
     //********* SET DEFAULT VALUES FOR SOME OF THE TEXT FIELDS **********/
     getAttrs(["dread"], (values) => {
-        const val = values["dread"];
+        const val = values["dread"]
         if(val === undefined || val === "") {
             setAttrs({
                 dread: "1d4"
-            });
+            })
         }
-    });
-});
+    })
+
+    //********* SET ROLL EVENT LISTENERS *********/
+    signed.forEach((s) => {
+        on(`clicked:${s}`, () => {
+            getAttrs([s], values => {
+                let v = parseInt(values[s])
+                if(v >= 0) v = "+" + v
+                startRoll(`&{template:check} {{name=${s} check}} {{roll=[[?{Check Type|Standard, 1d12|Advantage, 2d12kh1|Disadvantage, 2d12kl1}?{Modifier|${v}}]]}} {{hint=[[0]]}}`, (checkResult) => {
+                    console.log(checkResult)
+                    let modifier = checkResult.results.roll.dice[0]
+                    let expression = checkResult.results.roll.expression
+                    if(expression.startsWith("2d12kl1")){
+                        expression = "2d12kl1"
+                        if(modifier > checkResult.results.roll.dice[1]) modifier = checkResult.results.roll.dice[1]
+                    }
+                    else if (expression.startsWith("2d12kh1")){
+                        expression = "2d12kh1"
+                        if(modifier < checkResult.results.roll.dice[1]) modifier = checkResult.results.roll.dice[1]
+                    }
+                    else expression = "1d12"
+                    modifier = checkResult.results.roll.result - modifier
+                    console.log("Modifier without highest die: " + modifier)
+                    let computedResult = checkResult.results.roll.result
+                    if(modifier > 3)
+                        computedResult = computedResult - modifier + 3
+                    else if(modifier < -3)
+                        computedResult = computedResult - modifier - 3
+                    expression = expression + (modifier > 3 ? "+3" : modifier < -3 ? "-3" : modifier >=0 ? "+"+modifier : modifier)
+                    checkResult.results.hint.expression = ""
+                    finishRoll(checkResult.rollId, {
+                        roll: computedResult,
+                        hint: expression
+                    })
+                })
+            })
+        })
+    })
+})
 </script>

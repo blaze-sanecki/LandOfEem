@@ -51,7 +51,8 @@
     width: 100%;
 }
 
-.ui-dialog .charsheet button[type=roll] {
+.ui-dialog .charsheet button[type=roll],
+.ui-dialog .charsheet .sheet-attributes button[type=action] {
     background: transparent;
     color: #000000;
     padding: 0;
@@ -63,7 +64,8 @@
     text-align: left;
 }
 
-.ui-dialog .charsheet button[type=roll]:hover {
+.ui-dialog .charsheet button[type=roll]:hover,
+.ui-dialog .charsheet .sheet-attributes button[type=action]:hover {
     color: #cc9133;
     text-decoration: underline solid 1px #000000;
     font-weight: 700;
@@ -80,6 +82,10 @@
 
 .ui-dialog .charsheet button[type=roll]::before {
     content: '';
+}
+
+.clearRoll {
+    text-decoration: none;
 }
 
 /* ===================================== */
