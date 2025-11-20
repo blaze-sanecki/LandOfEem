@@ -16,7 +16,7 @@
 - **Journal**: General notes section
 
 
-#### Instructions
+## Instructions
 **Selecting a Class**
 - Class input field has suggested values which correspond to Land of Eem core classes
 - Selecting a predefined class resets Courage and Dread to its defaults (this is optional - a prompt will be displayed first)
