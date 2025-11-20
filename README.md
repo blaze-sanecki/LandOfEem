@@ -1,5 +1,5 @@
 # Land Of Eem - Roll20 Character Sheet
-<img src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/logo-flat.png" alt="Land of Eem Logo" width="228">
+<img src="https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/preview.png" alt="Preview">
 
 ## Features
 
