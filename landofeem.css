@@ -51,7 +51,7 @@
     width: 100%;
 }
 
-.ui-dialog .charsheet button[type=roll],
+.ui-dialog .charsheet .treasure button[type=action],
 .ui-dialog .charsheet .sheet-attributes button[type=action] {
     background: transparent;
     color: #000000;
@@ -64,28 +64,119 @@
     text-align: left;
 }
 
-.ui-dialog .charsheet button[type=roll]:hover,
+.ui-dialog .charsheet .treasure button[type=action]:hover,
 .ui-dialog .charsheet .sheet-attributes button[type=action]:hover {
     color: #cc9133;
     text-decoration: underline solid 1px #000000;
     font-weight: 700;
 }
 
-.ui-dialog .charsheet button[type=roll].treasure {
+.ui-dialog .charsheet button[type=action].treasure {
     float: right;
+    border:none;
+    background:transparent;
 }
 
-.ui-dialog .charsheet button[type=roll]:hover h2 {
+.ui-dialog .charsheet button[type=action]:hover h2 {
     color:#000000;
     text-decoration: underline solid 1px #cc9133;
 }
 
-.ui-dialog .charsheet button[type=roll]::before {
+.ui-dialog .charsheet button[type=action]::before {
     content: '';
 }
 
 .clearRoll {
     text-decoration: none;
+}
+
+.sheet-rolltemplate-attack,
+.sheet-rolltemplate-check {
+    background-color: #ffffff;
+    border: solid #cc9133 2px;
+    border-radius: 8px;
+    color:#000000;
+    overflow:hidden;
+
+}
+
+.sheet-rolltemplate-attack ul,
+.sheet-rolltemplate-check ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sheet-rolltemplate-attack h3,
+.sheet-rolltemplate-check h3 {
+    padding:8px;
+    text-align: center;
+    background-color: #faf4eb;
+    color:#000000;
+    font-size: 14px;
+}
+
+.sheet-rolltemplate-attack h4,
+.sheet-rolltemplate-check h4 {
+    padding:4px;
+    font-size: 13px;
+    font-weight: normal;
+    color:#000000;
+}
+
+.sheet-rolltemplate-attack h5,
+.sheet-rolltemplate-check h5 {
+    padding:4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color:#e62c2c;
+    background-color: #faf4eb;
+    margin-top:-8px;
+}
+
+.sheet-rolltemplate-attack h2,
+.sheet-rolltemplate-check h2 {
+    background-color: #cc9133;
+    font-size: 14px;
+    font-weight:800;
+    text-transform: uppercase;
+    color:#ffffff;
+    padding:4px;
+    line-height: 16px;
+}
+
+.sheet-rolltemplate-attack h2 i,
+.sheet-rolltemplate-check h2 i {
+    font-size: 12px;
+    font-weight:normal;
+    text-transform: none;
+    color:#faf4eb;
+    padding:4px;
+    line-height: 16px;
+}
+
+.sheet-rolltemplate-attack span.inlinerollresult,
+.sheet-rolltemplate-check span.inlinerollresult {
+   border: 1.5px solid #cc9133;
+   border-radius: 4px;
+}
+.sheet-rolltemplate-attack span.inlinerollresult.fullcrit,
+.sheet-rolltemplate-check span.inlinerollresult.fullcrit {
+   border: 2px solid #08a500;
+}
+.sheet-rolltemplate-attack span.inlinerollresult.fullfail,
+.sheet-rolltemplate-check span.inlinerollresult.fullfail {
+   border: 2px solid #e62c2c;
+}
+.sheet-rolltemplate-attack .sheet-critical-hit span.inlinerollresult,
+.sheet-rolltemplate-check .sheet-critical-hit span.inlinerollresult {
+   font-weight: bolder;
+   font-size:20px;
+   line-height: 30px;
+   border-radius: 7px;
+   border-width: 4px;
+   border-style: outset;
 }
 
 /* ===================================== */
@@ -573,10 +664,13 @@
 
 .ui-dialog .charsheet .stat-box input.small {
     position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 64px;
+    height: 48px;
     border: none;
     background-color: transparent;
+    background-image: url('https://raw.githubusercontent.com/blaze-sanecki/LandOfEem/main/images/small_frame.svg');
+    background-repeat: no-repeat;
+    background-position: center;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
@@ -611,9 +705,8 @@ label.small {
 }
 
 .stat-box.stat-courage input.small {
-    top: 44px;
-    left: 64px;
-    border: solid 2px #cccccc !important;
+    top: 38px;
+    left: 52px;
 }
 
 .stat-box.stat-courage label.small {
@@ -634,14 +727,13 @@ label.small {
 }
 
 .stat-box.stat-attack input.small {
-    top: 23px;
-    left: 68px;
-    border: solid 2px #cccccc !important;
+    top: 20px;
+    left: 54px;
     z-index: 1;
 }
 
 .stat-box.stat-attack label.small {
-    top: -13px;
+    top: -12px;
     left: 68px;
 }
 
@@ -660,9 +752,8 @@ label.small {
 }
 
 .stat-box.stat-defense input.small {
-    top: 53px;
-    left: 68px;
-    border: solid 2px #cccccc !important;
+    top: 49px;
+    left: 54px;
 }
 
 .stat-box.stat-defense label.small {
