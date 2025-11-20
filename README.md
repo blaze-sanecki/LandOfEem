@@ -30,9 +30,15 @@
 
 ## Development
 
+#### Roadmap (TODO list)
+- Add interactive dice icons for making generic rolls
+- Flexible sheet height filling all of the available space
+- Buttons for consuming rations (automated usage die roll)
+- Buttons for spending coins (automated usage die roll)
+
 #### Credits
 
-**Character Sheet Created by**: Blaze Sanecki  
+**Character Sheet Created by**: Blaze Sanecki
 **Land of Eem Created By**: Ben Costa & James Parks  
 **Official Land of Eem Website**: [landofeem.com](https://landofeem.com/)
 
