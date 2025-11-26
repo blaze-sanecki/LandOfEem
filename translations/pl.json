@@ -107,10 +107,10 @@
     "complete-success": "Pełny Sukces.",
     "result": "Wynik",
     "treasure_hunting": "Poszukiwanie Skarbów",
-    "check-type": "Typ Rzutu",
-    "check-standard": "Standardowy",
-    "check-advantage": "Przewaga",
-    "check-disadvantage": "Utrudnienie",
+    "check_type": "Typ Rzutu",
+    "check_standard": "Standardowy",
+    "check_advantage": "Przewaga",
+    "check_disadvantage": "Utrudnienie",
     "modifier": "Modyfikator",
     "opponents-defense": "Obrona Przeciwnika"
 }
