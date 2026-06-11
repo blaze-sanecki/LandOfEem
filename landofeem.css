@@ -1054,11 +1054,11 @@ label.small {
 
 /* Sparkle Icon */
 .sparkle {
-    font-size: 11px;
-    color: var(--sheet-primary-color);
     display: inline-block;
     vertical-align: middle;
-    width: fit-content;
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
     margin-left: -4px;
     margin-right: -2px;
 }
